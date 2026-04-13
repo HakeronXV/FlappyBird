@@ -2,12 +2,31 @@ using UnityEngine;
 
 public class BirdController : MonoBehaviour
 {
-    void Start()
+    [Header("Bird Settings")]
+    [Range(1f, 10f)]
+    public float jumpForce = 5f;
+    private Rigidbody2D _rb;
+    private void Start()
     {
-        Debug.Log("Bird ready");
+        _rb = GetComponent<Rigidbody2D>();
+        Debug.Log("Bird ready"); 
     }
 
-    void Update()
+    private void HandleInput()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
+    }
+
+    private void Jump()
+    {
+        _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, Mathf.Clamp(_rb.linearVelocity.y, -10, 10f));
+        _rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    }
+    private void Update()
+    { 
+        HandleInput();
     }
 }
