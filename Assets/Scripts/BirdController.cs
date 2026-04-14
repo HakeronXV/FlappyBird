@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,7 +10,7 @@ public class BirdController : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     public enum GameState { Playing, GameOver }
     public GameState gameState;
-    
+    public TMP_Text gameOverText;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -32,6 +33,7 @@ public class BirdController : MonoBehaviour
             if (collision.gameObject.CompareTag("Obstacle"))
             {
                 gameState = GameState.GameOver;
+                gameOverText.enabled = true;
                 Debug.Log("Game Over");
             }
         }

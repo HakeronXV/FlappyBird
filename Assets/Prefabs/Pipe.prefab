@@ -334,9 +334,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5818435096832497944}
   - component: {fileID: 633105485938418650}
+  - component: {fileID: 8170315208890538556}
   m_Layer: 0
-  m_Name: Trigger
-  m_TagString: Untagged
+  m_Name: ScoreZone
+  m_TagString: Trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -402,3 +403,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.48, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8170315208890538556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8861597727141380788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f7502462192e748875962dcaca321d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
