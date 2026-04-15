@@ -12,8 +12,8 @@ public class PipeSpawner : MonoBehaviour
 
     void SpawnPipe()
     {
-        float randomY = Random.Range(transform.position.y + 2f, transform.position.y - 2f);
-        Vector3 spawnPos = new Vector3(transform.position.x, randomY, 0);
+        var randomY = Random.Range(transform.position.y + 2f, transform.position.y - 2f);
+        var spawnPos = new Vector3(transform.position.x, randomY, 0);
         Instantiate(pipePrefab, spawnPos, Quaternion.identity);
 
     }

@@ -5,23 +5,18 @@ public class GameManager : MonoBehaviour
     public enum GameState { Playing, GameOver }
     public GameState gameState;
 
-    void Start()
+    private void Start()
     {
         gameState = GameState.Playing;
     }
 
-    void Update()
+    private void Update()
     {
-        switch (gameState)
+        Time.timeScale = gameState switch
         {
-            case GameState.Playing:
-                Time.timeScale = 1f;
-                break;
-            case GameState.GameOver:
-                Time.timeScale = 0f;
-                break;
-            
-            
-        }
+            GameState.Playing => 1f,
+            GameState.GameOver => 0f,
+            _ => Time.timeScale
+        };
     }
 }
