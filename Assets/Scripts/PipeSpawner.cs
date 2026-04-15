@@ -3,17 +3,17 @@ using UnityEngine;
 public class PipeSpawner : MonoBehaviour
 {
     public GameObject pipePrefab;
-    public float spawnRate = 1f;
+    public float spawnRate = 2f;
 
-    private void Start()
+    void Start()
     {
         InvokeRepeating(nameof(SpawnPipe), 1f, spawnRate);
     }
 
-    private void SpawnPipe()
+    void SpawnPipe()
     {
-        var randomY = Random.Range(-2f, 2f);
-        var spawnPos = new Vector3(transform.position.x, randomY, 0);
+        float randomY = Random.Range(transform.position.y + 2f, transform.position.y - 2f);
+        Vector3 spawnPos = new Vector3(transform.position.x, randomY, 0);
         Instantiate(pipePrefab, spawnPos, Quaternion.identity);
 
     }

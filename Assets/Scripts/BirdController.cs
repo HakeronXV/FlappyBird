@@ -28,15 +28,7 @@ public class BirdController : MonoBehaviour
             _rigidbody2D.linearVelocity = new Vector2(_rigidbody2D.linearVelocity.x, Mathf.Clamp(_rigidbody2D.linearVelocity.y, -10, 10f));
             _rigidbody2D.AddForceY(jumpForce, ForceMode2D.Impulse);
         }
-        void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.CompareTag("Obstacle"))
-            {
-                gameState = GameState.GameOver;
-                gameOverText.enabled = true;
-                Debug.Log("Game Over");
-            }
-        }
+        
 
     private void Start()
     {
@@ -45,6 +37,16 @@ public class BirdController : MonoBehaviour
         if (_rigidbody2D == null) Debug.LogError("No Rigidbody2D found");
         Debug.Log("Bird ready");
         
+    }
+    
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            gameState = GameState.GameOver;
+            gameOverText.enabled = true;
+            Debug.Log("Game Over");
+        }
     }
     
     private void Update()
