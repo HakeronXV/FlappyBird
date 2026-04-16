@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c77980db9490acc48a80d6986501e719
+guid: 1c7b80823edd98c40bca845fb12c1a0c
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,6 +97,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -113,10 +126,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bird2-2_1
+      name: Bird2-2_0
       rect:
         serializedVersion: 2
-        x: 16
+        x: 0
         y: 0
         width: 16
         height: 16
@@ -135,10 +148,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bird2-2_0
+      name: Bird2-2_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 16
         y: 0
         width: 16
         height: 16
@@ -150,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d5c5257b249c1b4187a428a878415c0
-      internalID: 1200855234
+      spriteID: 27cd40a7d83019a4d829b237208f31ec
+      internalID: 406775708
       vertices: []
       indices: 
       edges: []
@@ -172,8 +185,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1dda08192d296b4fb81df3aa7f1dd73
-      internalID: 266966358
+      spriteID: a9ba8c4ae7dcf2b4c8ee616fc4040bff
+      internalID: -2040107460
       vertices: []
       indices: 
       edges: []
@@ -194,8 +207,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8698c2e72b8eca042b09ca8d80e9aa9a
-      internalID: -549405944
+      spriteID: 29e45f5c282e01e4da671ddb159f8322
+      internalID: -1043495184
       vertices: []
       indices: 
       edges: []
@@ -204,7 +217,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9ced6bf19e829d348b0ace9b3ab6df0e
+    spriteID: 68d1e026fd6a12e49a86b751d9f54ff7
     internalID: 0
     vertices: []
     indices: 
@@ -214,12 +227,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Bird2-2_0: 1200855234
-      Bird2-2_1: 458198515284332445
-      Bird2-2_2: 266966358
-      Bird2-2_3: -549405944
+      Bird2-2_0: 458198515284332445
+      Bird2-2_1: 406775708
+      Bird2-2_2: -2040107460
+      Bird2-2_3: -1043495184
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

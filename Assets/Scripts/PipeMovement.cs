@@ -1,13 +1,18 @@
 using UnityEngine;
 
-public class PipeMovement : MonoBehaviour
+public class SimpleMove : MonoBehaviour
 {
-    [Header("PipeMovement Settings")]
-    [Range(1f, 10f)]
-    public float speed = 2f;
-
-    private void Update()
+    [SerializeField, Range(2,4)] private float unitsPerSecond;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-        transform.position += Vector3.left * (speed * Time.deltaTime);
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        transform.Translate(Vector2.left * (unitsPerSecond * Time.deltaTime));
+        if(transform.position.x < -15) gameObject.SetActive(false);
     }
 }

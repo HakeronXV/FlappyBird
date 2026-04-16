@@ -1,11 +1,22 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class UIManager : MonoBehaviour
+public class UiManager : MonoBehaviour
 {
-    public void RestartGame()
+    [SerializeField] private GameObject gameOverMenu;
+    [SerializeField] private GameObject pauseMenu;
+
+    public void DisplayGameOverMenu()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameOverMenu.SetActive(true);
+    }
+
+    public void DisplayScore(int score)
+    {
+        Debug.Log("Score: " + score);
+    }
+
+    public void DisplayPauseMenu()
+    {
+        pauseMenu.SetActive(true);
     }
 }
