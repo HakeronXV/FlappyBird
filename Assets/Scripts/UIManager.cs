@@ -15,8 +15,21 @@ public class UiManager : MonoBehaviour
         Debug.Log("Score: " + score);
     }
 
-    public void DisplayPauseMenu()
+    public bool DisplayPauseMenu()
     {
         pauseMenu.SetActive(true);
+        Time.timeScale = 0;
+        return true;
+    }
+
+    public void NotDisplayPauseMenu()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    public void DisplayQuitGame()
+    {
+        
     }
 }

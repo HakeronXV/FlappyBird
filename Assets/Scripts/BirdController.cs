@@ -10,9 +10,9 @@ public class BirdController : MonoBehaviour
     private Camera _camera;
     [HideInInspector] public GameManager mManager;
 
-    [SerializeField]private bool isDead;
-
-    [SerializeField]private GameObject particleSystem;
+    [SerializeField] private bool isDead;
+    [SerializeField] private CameraShake _cameraShake;
+    [SerializeField] private GameObject particleSystem;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     [Header("Buttons")]
-    [SerializeField] private Button retryButton;
+    [SerializeField] private Button continueButton;
     [SerializeField] private Button quitButton;
 
     private void Start()
     {
-        retryButton.onClick.AddListener(OnRetryGameButtonClick);
+        continueButton.onClick.AddListener(OnContinueGameButtonClick);
         quitButton.onClick.AddListener(QuitGame);
     }
 
@@ -21,8 +21,9 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Quit Game");
     }
 
-    private void OnRetryGameButtonClick()
+    private void OnContinueGameButtonClick()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 }

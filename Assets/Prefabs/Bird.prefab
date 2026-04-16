@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2519468139707645544}
   - component: {fileID: 4643938400665779110}
   - component: {fileID: 5728097336579309263}
+  - component: {fileID: 1140924056309733895}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Player
@@ -112,6 +113,7 @@ MonoBehaviour:
   jumpForce: 5
   mManager: {fileID: 0}
   isDead: 0
+  _cameraShake: {fileID: 0}
   particleSystem: {fileID: 760947056551783718}
 --- !u!50 &4399773342554046552
 Rigidbody2D:
@@ -295,6 +297,21 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.08
+--- !u!114 &1140924056309733895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68305769957194485}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 233ed1a089a855d4bb673f497a2a34ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraShake
+  shakeDuration: 0
+  shakeAmount: 0.7
+  decreaseFactor: 1
 --- !u!1001 &759891711419498872
 PrefabInstance:
   m_ObjectHideFlags: 0

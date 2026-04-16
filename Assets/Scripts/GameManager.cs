@@ -2,6 +2,7 @@ using System;
 using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -31,14 +32,6 @@ public class GameManager : MonoBehaviour
         {
             state = STATE.Paused;
             uiManager.DisplayPauseMenu();
-        }
-        while (state == STATE.Paused)
-        {
-            if (Keyboard.current.escapeKey.wasPressedThisFrame)
-            {
-                uiManager.DisplayPauseMenu();
-                enabled = false;
-            }
         }
     }
         
