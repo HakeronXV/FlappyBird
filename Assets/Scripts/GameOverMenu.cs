@@ -18,7 +18,11 @@ public class GameOverMenu : MonoBehaviour
 
     private void QuitGame()
     {
-        Debug.Log("Quit Game");
+        if (UnityEditor.EditorApplication.isPlaying)
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+        else Application.Quit ();
     }
 
     private void OnRetryGameButtonClick()

@@ -23,8 +23,8 @@ public class GameManager : MonoBehaviour
         Paused,
         GameOver
     }
-    
-    private STATE state = STATE.Playing;
+
+    private STATE state;
 
     private void Pause()
     {
@@ -45,12 +45,14 @@ public class GameManager : MonoBehaviour
     {
         Pause();
     }
-    public void GameOver()
+
+    internal void GameOver()
     {
+        state = STATE.GameOver;
         uiManager.DisplayGameOverMenu();
     }
 
-    public void AddPoint()
+    internal void AddPoint()
     {
         score++;
         uiManager.DisplayScore(score);

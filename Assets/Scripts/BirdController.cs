@@ -9,14 +9,15 @@ public class BirdController : MonoBehaviour
     public float jumpForce = 0;
     private Camera _camera;
     [HideInInspector] public GameManager mManager;
-
+    [SerializeField] private GameObject cameraShake;
     [SerializeField] private bool isDead;
-    [SerializeField] private CameraShake _cameraShake;
     [SerializeField] private GameObject particleSystem;
+    private AudioSource _audioSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _audioSource = this.GetComponent<AudioSource>();
         _camera = Camera.main;
         _rigidbody2D = GetComponent<Rigidbody2D>();
         if (_rigidbody2D == null) Debug.LogError("BirdController: No Rigidbody2D found!");
@@ -39,16 +40,18 @@ public class BirdController : MonoBehaviour
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             _rigidbody2D.AddForceY(jumpForce, ForceMode2D.Impulse);
-        }
+            _audioSource.Play();
+        } 
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             particleSystem.SetActive(true);
             mManager.GameOver();
             enabled = true;
+            cameraShake.SetActive(true);
         }
     }
 
