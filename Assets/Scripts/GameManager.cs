@@ -1,8 +1,12 @@
 using System;
+using TMPro;
+using UnityEditor;
 using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.HID;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +14,8 @@ public class GameManager : MonoBehaviour
     [SerializeField, Tooltip("The player object you must instantiate at start.")] private GameObject playerPrefab;
     [SerializeField,Tooltip("The position of the player at start.")] private Transform playerSpawnPosition;
     private GameObject _bird;
-    
+    [SerializeField] private TMP_Text nameInput;
+    [SerializeField] private Button playButton;
     [Header("Managers References"), Space(10)]
     [SerializeField] private UiManager uiManager;
     
@@ -25,6 +30,7 @@ public class GameManager : MonoBehaviour
     }
 
     private STATE state;
+    [SerializeField] private GameObject mainMenu;
 
     private void Pause()
     {
@@ -37,8 +43,17 @@ public class GameManager : MonoBehaviour
         
     void Start()
     {
-        _bird = Instantiate(playerPrefab, playerSpawnPosition.position, Quaternion.identity);
-        _bird.GetComponent<BirdController>().mManager =this;
+        playButton.onClick.AddListener(OnplayGameButtonClick);
+        
+       _bird = Instantiate(playerPrefab, playerSpawnPosition.position, Quaternion.identity);
+       _bird.GetComponent<BirdController>().mManager =this;
+
+    }
+
+    private void OnplayGameButtonClick()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        mainMenu.SetActive(false);
     }
 
     void Update()
