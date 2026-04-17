@@ -5,6 +5,7 @@ public class UiManager : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverMenu;
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject mainMenu;
 
     public void DisplayGameOverMenu()
     {
@@ -16,11 +17,14 @@ public class UiManager : MonoBehaviour
         Debug.Log("Score: " + score);
     }
 
-    public bool DisplayPauseMenu()
+    internal void DisplayMainMenu()
+    {
+        mainMenu.SetActive(true);
+        Time.timeScale = 0;
+    }
+    internal void DisplayPauseMenu()
     {
         pauseMenu.SetActive(true);
-        Time.timeScale = 0;
-        return true;
     }
 
     public void NotDisplayPauseMenu()

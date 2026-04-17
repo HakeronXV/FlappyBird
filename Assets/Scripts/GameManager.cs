@@ -28,9 +28,8 @@ public class GameManager : MonoBehaviour
         Paused,
         GameOver
     }
-
+    
     private STATE state;
-    [SerializeField] private GameObject mainMenu;
 
     private void Pause()
     {
@@ -43,18 +42,13 @@ public class GameManager : MonoBehaviour
         
     void Start()
     {
-        playButton.onClick.AddListener(OnplayGameButtonClick);
-        
+        state = STATE.Playing;
+        uiManager.DisplayMainMenu();
        _bird = Instantiate(playerPrefab, playerSpawnPosition.position, Quaternion.identity);
        _bird.GetComponent<BirdController>().mManager =this;
 
     }
-
-    private void OnplayGameButtonClick()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        mainMenu.SetActive(false);
-    }
+    
 
     void Update()
     {
